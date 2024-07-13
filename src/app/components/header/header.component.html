@@ -1,0 +1,287 @@
+<header
+  style="position: fixed; top: 0; width: 100%; background-color: white; z-index: 1000; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  <div style="cursor: pointer; display: inline-block;">
+    <mat-icon [matMenuTriggerFor]="mainMenu" aria-hidden="false" aria-label="Example menu icon">
+      {{panelOpenState ? 'close' : 'menu'}}
+    </mat-icon>
+  </div>
+  <mat-menu #mainMenu="matMenu">
+    <button mat-menu-item routerLink="/about">About</button>
+    <button mat-menu-item routerLink="/cards">Cards</button>
+    <button mat-menu-item routerLink="/buttons">Buttons</button>
+    <button mat-menu-item routerLink="/bottom-sheet">Bottom Sheet</button>
+    <button mat-menu-item routerLink="/body">Autocomplete</button>
+    <button mat-menu-item routerLink="/badge">Badge</button>
+    <button mat-menu-item routerLink="/checkbox">Checkbox</button>
+    <button mat-menu-item routerLink="/chips">Chips</button>
+    <button mat-menu-item routerLink="/datepicker">Datepicker</button>
+    <button mat-menu-item routerLink="/dialog">Dialog</button>
+    <button mat-menu-item routerLink="/dialoganimation">Dialog Animation</button>
+    <button mat-menu-item routerLink="/expansionpanel">Expansion Panel</button>
+    <button mat-menu-item routerLink="/formsfield">Forms & Fields</button>
+    <button mat-menu-item routerLink="/gridlist">Grid List</button>
+    <button mat-menu-item routerLink="/paginator">Paginator with form</button>
+    <button mat-menu-item routerLink="/radioripples">Radio & Ripples & Slide Toggle</button>
+  </mat-menu>
+</header>
+
+
+
+
+<!-- <header style="position: fixed; top: 0; width: 100%; background-color: white; z-index: 1000; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  <div (click)="panelOpenState = !panelOpenState" style="cursor: pointer; display: inline-block;">
+    <mat-icon aria-hidden="false" aria-label="Example menu icon">
+      {{panelOpenState ? 'close' : 'menu'}}
+    </mat-icon>
+  </div>
+  <nav *ngIf="panelOpenState" style="display: inline-block; margin-left: 20px;">
+    <mat-nav-list style="display: flex; flex-direction: column; position: absolute; background-color: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); padding: 10px; max-height: 300px; overflow-y: auto;">
+      <mat-list-item routerLink="/about">About</mat-list-item>
+      <mat-list-item routerLink="/cards">Cards</mat-list-item>
+      <mat-list-item routerLink="/buttons">Buttons</mat-list-item>
+      <mat-list-item routerLink="/bottom-sheet">Bottom Sheet</mat-list-item>
+      <mat-list-item routerLink="/body">Autocomplete</mat-list-item>
+      <mat-list-item routerLink="/badge">Badge</mat-list-item>
+      <mat-list-item routerLink="/checkbox">Checkbox</mat-list-item>
+      <mat-list-item routerLink="/chips">Chips</mat-list-item>
+      <mat-list-item routerLink="/datepicker">Datepicker</mat-list-item>
+      <mat-list-item routerLink="/dialog">Dialog</mat-list-item>
+      <mat-list-item routerLink="/dialoganimation">Dialog Animation</mat-list-item>
+      <mat-list-item routerLink="/expansionpanel">Expansion Panel</mat-list-item>
+      <mat-list-item routerLink="/formsfield">Forms & Fields</mat-list-item>
+      <mat-list-item routerLink="/gridlist">Grid List</mat-list-item>
+    </mat-nav-list>
+  </nav>
+
+</header> -->
+
+<!-- <header style="position: fixed; top: 0; width: 100%; background-color: white; z-index: 1000; padding: 10px;">
+  <div (click)="panelOpenState = !panelOpenState" style="cursor: pointer; display: inline-block;">
+    <mat-icon aria-hidden="false" aria-label="Example menu icon">
+      {{panelOpenState ? 'close' : 'menu'}}
+    </mat-icon>
+  </div>
+  <nav *ngIf="panelOpenState" style="margin-left: 20px; max-height: 300px; overflow-y: auto;">
+    <mat-nav-list>
+      <mat-list-item routerLink="/about">About</mat-list-item>
+      <mat-list-item routerLink="/cards">Cards</mat-list-item>
+      <mat-list-item routerLink="/buttons">Buttons</mat-list-item>
+      <mat-list-item routerLink="/bottom-sheet">Bottom Sheet</mat-list-item>
+      <mat-list-item routerLink="/body">Autocomplete</mat-list-item>
+      <mat-list-item routerLink="/badge">Badge</mat-list-item>
+      <mat-list-item routerLink="/checkbox">Checkbox</mat-list-item>
+      <mat-list-item routerLink="/chips">Chips</mat-list-item>
+      <mat-list-item routerLink="/datepicker">Datepicker</mat-list-item>
+      <mat-list-item routerLink="/dialog">Dialog</mat-list-item>
+      <mat-list-item routerLink="/dialoganimation">Dialog Animation</mat-list-item>
+      <mat-list-item routerLink="/expansionpanel">Expansion Panel</mat-list-item>
+      <mat-list-item routerLink="/formsfield">Forms & Fields</mat-list-item>
+      <mat-list-item routerLink="/gridlist">Grid List</mat-list-item>
+    </mat-nav-list>
+  </nav>
+</header>
+ -->
+
+<!-- <header class=".containerdivheader">
+  <div (click)="panelOpenState = !panelOpenState" style="cursor: pointer; display: inline-block">
+    <mat-icon aria-hidden="false" aria-label="Example menu icon">
+      {{ panelOpenState ? "close" : "menu" }}
+    </mat-icon>
+  </div>
+  <nav *ngIf="panelOpenState" style="display: inline-block; margin-left: 20px">
+    <mat-nav-list style="
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        max-height: 300px;
+        overflow-y: auto;
+      ">
+      <mat-list-item routerLink="/about">About</mat-list-item>
+      <mat-list-item routerLink="/cards">Cards</mat-list-item>
+      <mat-list-item routerLink="/buttons">Buttons</mat-list-item>
+      <mat-list-item routerLink="/bottom-sheet">Bottom Sheet</mat-list-item>
+      <mat-list-item routerLink="/body">Autocomplete</mat-list-item>
+      <mat-list-item routerLink="/badge">Badge</mat-list-item>
+      <mat-list-item routerLink="/checkbox">Checkbox</mat-list-item>
+      <mat-list-item routerLink="/chips">Chips</mat-list-item>
+      <mat-list-item routerLink="/datepicker">Datepicker</mat-list-item>
+      <mat-list-item routerLink="/dialog">Dialog</mat-list-item>
+      <mat-list-item routerLink="/dialoganimation">Dialog Animation</mat-list-item>
+      <mat-list-item routerLink="/expansionpanel">Expansion Panel</mat-list-item>
+      <mat-list-item routerLink="/formsfield">Forms & Fields</mat-list-item>
+      <mat-list-item routerLink="/gridlist">Grid List menu</mat-list-item>
+      <mat-list-item routerLink="/paginator">Paginator with form </mat-list-item>
+        <mat-list-item routerLink="/radioripples">radio & ripples & slidetoggle</mat-list-item>
+    </mat-nav-list>
+  </nav>
+
+  <button mat-button [matMenuTriggerFor]="animals">Animal index</button>
+  <mat-menu #animals="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
+    <button mat-menu-item [matMenuTriggerFor]="invertebrates">
+      Invertebrates
+    </button>
+  </mat-menu>
+
+  <mat-menu #vertebrates="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
+    <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
+    <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
+    <button mat-menu-item>Birds</button>
+    <button mat-menu-item>Mammals</button>
+  </mat-menu>
+
+  <mat-menu #invertebrates="matMenu">
+    <button mat-menu-item>Insects</button>
+    <button mat-menu-item>Molluscs</button>
+    <button mat-menu-item>Crustaceans</button>
+    <button mat-menu-item>Corals</button>
+    <button mat-menu-item>Arachnids</button>
+    <button mat-menu-item>Velvet worms</button>
+    <button mat-menu-item>Horseshoe crabs</button>
+  </mat-menu>
+
+  <mat-menu #fish="matMenu">
+    <button mat-menu-item>Baikal oilfish</button>
+    <button mat-menu-item>Bala shark</button>
+    <button mat-menu-item>Ballan wrasse</button>
+    <button mat-menu-item>Bamboo shark</button>
+    <button mat-menu-item>Banded killifish</button>
+  </mat-menu>
+
+  <mat-menu #amphibians="matMenu">
+    <button mat-menu-item>Sonoran desert toad</button>
+    <button mat-menu-item>Western toad</button>
+    <button mat-menu-item>Arroyo toad</button>
+    <button mat-menu-item>Yosemite toad</button>
+  </mat-menu>
+
+  <mat-menu #reptiles="matMenu">
+    <button mat-menu-item>Banded Day Gecko</button>
+    <button mat-menu-item>Banded Gila Monster</button>
+    <button mat-menu-item>Black Tree Monitor</button>
+    <button mat-menu-item>Blue Spiny Lizard</button>
+    <button mat-menu-item disabled>Velociraptor</button>
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="aboveMenu">Above</button>
+  <mat-menu #aboveMenu="matMenu" yPosition="above">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="belowMenu">Below</button>
+  <mat-menu #belowMenu="matMenu" yPosition="below">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="beforeMenu">Before</button>
+  <mat-menu #beforeMenu="matMenu" xPosition="before">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="afterMenu">After</button>
+  <mat-menu #afterMenu="matMenu" xPosition="after">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
+  </mat-menu>
+</header> -->
+
+<!-- 
+<header>
+  <div (click)="panelOpenState = !panelOpenState" style="cursor: pointer; display: inline-block;">
+    <mat-icon aria-hidden="false" aria-label="Example menu icon">
+      {{panelOpenState ? 'close' : 'menu'}}
+    </mat-icon>
+  </div>
+  <nav *ngIf="panelOpenState" style="display: inline-block; margin-left: 20px;">
+    <mat-nav-list>
+      <mat-list-item routerLink="/about">About</mat-list-item>
+      <mat-list-item routerLink="/cards">Cards</mat-list-item>
+      <mat-list-item routerLink="/buttons">Buttons</mat-list-item>
+      <mat-list-item routerLink="/bottom-sheet">Bottom Sheet</mat-list-item>
+      <mat-list-item routerLink="/body">Autocomplete</mat-list-item>
+      <mat-list-item routerLink="/badge">Badge</mat-list-item>
+      <mat-list-item routerLink="/checkbox">Checkbox</mat-list-item>
+      <mat-list-item routerLink="/chips">Chips</mat-list-item>
+      <mat-list-item routerLink="/datepicker">Datepicker</mat-list-item>
+      <mat-list-item routerLink="/dialog">Dialog</mat-list-item>
+      <mat-list-item routerLink="/dialoganimation">Dialog Animation</mat-list-item>
+      <mat-list-item routerLink="/expansionpanel">Expansion Panel</mat-list-item>
+      <mat-list-item routerLink="/formsfield">Forms & Fields</mat-list-item>
+      <mat-list-item routerLink="/gridlist">Grid List</mat-list-item>
+    </mat-nav-list>
+  </nav>
+</header>
+
+
+ -->
+
+<!-- 
+<mat-grid-list cols="2">
+  <mat-grid-tile>
+    <div (click)="panelOpenState = !panelOpenState">
+  <mat-icon aria-hidden="false" aria-label="Example menu icon">
+    {{panelOpenState ? 'close' : 'menu'}}
+  </mat-icon>
+</div>
+<div *ngIf="panelOpenState">
+  <mat-nav-list>
+    <mat-list-item routerLink="/about">About</mat-list-item>
+    <mat-list-item routerLink="/cards">Cards</mat-list-item>
+    <mat-list-item routerLink="/buttons">Buttons</mat-list-item>
+    <mat-list-item routerLink="/bottom-sheet">Bottom Sheet</mat-list-item>
+    <mat-list-item routerLink="/body">Autocomplete</mat-list-item>
+    <mat-list-item routerLink="/badge">Badge</mat-list-item>
+    <mat-list-item routerLink="/checkbox">Checkbox</mat-list-item>
+    <mat-list-item routerLink="/chips">Chips</mat-list-item>
+    <mat-list-item routerLink="/datepicker">Datepicker</mat-list-item>
+    <mat-list-item routerLink="/dialog">Dialog</mat-list-item>
+    <mat-list-item routerLink="/dialoganimation">Dialog Animation</mat-list-item>
+    <mat-list-item routerLink="/expansionpanel">Expansion Panel</mat-list-item>
+    <mat-list-item routerLink="/formsfield">Forms & Fields</mat-list-item>
+    <mat-list-item routerLink="/gridlist">Grid List</mat-list-item>
+  </mat-nav-list>
+</div>
+
+  </mat-grid-tile>
+  <mat-grid-tile> -->
+<!--     
+<a routerLink="/about">About</a> &nbsp; &nbsp;
+<a routerLink="/cards">cards</a>  &nbsp; &nbsp;
+  <a routerLink="/buttons">Buttons</a> &nbsp; &nbsp;
+  <a routerLink="/bottom-sheet">bottom sheet</a> &nbsp; &nbsp;
+  <a routerLink="/body">Autocomplete</a> &nbsp; &nbsp;
+  <a routerLink="/badge">badge</a> &nbsp; &nbsp;
+  </mat-grid-tile>
+</mat-grid-list> -->
+
+<!-- 
+
+<a routerLink="/about">About</a> &nbsp; &nbsp;
+<a routerLink="/cards">cards</a>  &nbsp; &nbsp;
+  <a routerLink="/buttons">Buttons</a> &nbsp; &nbsp;
+  <a routerLink="/bottom-sheet">bottom sheet</a> &nbsp; &nbsp;
+  <a routerLink="/body">Autocomplete</a> &nbsp; &nbsp;
+  <a routerLink="/badge">badge</a> &nbsp; &nbsp;
+  <a routerLink="/checkbox">checkbox</a> &nbsp; &nbsp;
+  <a routerLink="/chips">chips</a> &nbsp; &nbsp;
+   <a routerLink="/datepicker">datepicker</a> &nbsp; &nbsp;
+   <a routerLink="/dialog">dialog</a> &nbsp; &nbsp;
+     <a routerLink="/dialoganimation">dialog Animation</a> &nbsp; &nbsp;
+     <a routerLink="/expansionpanel">Expansion Panel</a> &nbsp; &nbsp;
+     <a routerLink="/formsfield">Forms & Fields</a> &nbsp; &nbsp;
+     <a routerLink="/gridlist">Grid List</a> &nbsp; &nbsp;
+      -->
+<!-- <app-checkbox *ngIf="hasRoute('/')"></app-checkbox> -->
+<!-- <app-cards *ngIf="hasRoute('/')"></app-cards> -->
+
+<!--<app-badge ngskiphydration></app-badge>-->
+<!-- <app-bottom-sheet></app-bottom-sheet> -->
+<!-- 
+<app-buttons></app-buttons> -->

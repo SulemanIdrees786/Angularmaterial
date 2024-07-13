@@ -1,0 +1,16 @@
+<p>dialog works!</p>
+<ol>
+  <li><mat-form-field appearance="fill">
+    <mat-label>Whats your name</mat-label>
+    <input matInput [(ngModel)]="name">
+  </mat-form-field>
+  </li>
+  <li>
+    <button mat-raised-button (click)="opendialog()">pickone</button>
+  </li>
+  <li  *ngIf="animal">you choose <i> {{animal}}</i> </li>
+</ol>
+
+
+<mat-divider></mat-divider>
+
