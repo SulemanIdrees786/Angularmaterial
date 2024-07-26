@@ -37,4 +37,91 @@
 
 <mat-form-field appearance="fill">
     <mat-label>Toppings</mat-label>
+    <mat-select [formControl]="toppings" multiple>
+        <mat-select-trigger>
+            {{toppings.value?.[0] || ''}}
+            <span *ngIf="(toppings.value?.length || 0) > 1" class="example-additional-selection">
+                (+{{(toppings.value?.length || 0) - 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})
+            </span>
+        </mat-select-trigger>
+        <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+    </mat-select>
 </mat-form-field>
+
+
+
+
+<h1>Side navs</h1>
+
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <p>Auto-resizing sidenav</p>
+        <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+        <button (click)="showFiller = !showFiller" mat-raised-button>
+            Toggle extra text
+        </button>
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+        <button type="button" mat-button (click)="drawer.toggle()">
+            Toggle sidenav
+        </button>
+    </div>
+
+</mat-drawer-container>
+
+
+
+
+
+<mat-drawer-container class="example-container1"  autosize>
+    <mat-drawer mode="side" opened>Drawer content</mat-drawer>
+    <mat-drawer-content style="background-color:darkgray;">Main content</mat-drawer-content>
+</mat-drawer-container>
+
+
+<h1>SLide togglw</h1>
+
+<mat-slide-toggle>slide me</mat-slide-toggle>
+
+
+<mat-slide-toggle [(ngModel)]="isChecked" (change)="onToggleChange($event)">
+    <span *ngIf="isChecked">ON</span>
+    <span *ngIf="!isChecked">OFF</span>
+</mat-slide-toggle>
+
+
+<h2>Snack bar</h2>
+
+<mat-form-field appearance="fill">
+    <mat-label>Snack bar duration (seconds)</mat-label>
+    <input type="number" [(ngModel)]="durationInSeconds" matInput>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+    <mat-label>message</mat-label>
+    <input matInput value="disco party" #message>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+    <mat-label>Action</mat-label>
+    <input matInput value="dance" #action>
+</mat-form-field>
+<mat-form-field appearance="fill">
+    <mat-label>Horizontal position</mat-label>
+    <mat-select [(value)]="horizontalPosition">
+        <mat-option value="start">Start</mat-option>
+        <mat-option value="center">Center</mat-option>
+        <mat-option value="end">End</mat-option>
+        <mat-option value="left">Left</mat-option>
+        <mat-option value="right">Right</mat-option>
+    </mat-select>
+</mat-form-field>
+<mat-form-field appearance="fill">
+    <mat-label>Vertical position</mat-label>
+    <mat-select [(value)]="verticalPosition">
+        <mat-option value="top">Top</mat-option>
+        <mat-option value="bottom">Bottom</mat-option>
+    </mat-select>
+</mat-form-field>
+<button mat-stroked-button (click)="opensnack(message.value,action.value)"> Show Snack bar</button>

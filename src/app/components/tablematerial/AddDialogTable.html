@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>Add Data</h2>
+<div mat-dialog-content>
+    <form (ngSubmit)="addData()">
+        <!-- <mat-form-field>
+            <input matInput placeholder="Position" type="number" [(ngModel)]="newData.position" name="position"
+                required>
+        </mat-form-field> -->
+      
+        <mat-form-field>
+            <input matInput placeholder="Name" [(ngModel)]="newData.name" name="name" required>
+        </mat-form-field>
+        &nbsp;&nbsp;
+        <mat-form-field>
+            <input matInput placeholder="Weight" type="number" [(ngModel)]="newData.weight" name="weight" required>
+        </mat-form-field>
+        &nbsp;&nbsp;
+        <mat-form-field>
+            <input matInput placeholder="Symbol" [(ngModel)]="newData.symbol" name="symbol" required>
+        </mat-form-field>
+        &nbsp;&nbsp;
+
+        <button mat-raised-button type="submit" color="primary">Add Data</button>
+    </form>
+</div>

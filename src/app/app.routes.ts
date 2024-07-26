@@ -15,6 +15,11 @@ import { FormsfieldComponent } from './components/formsfield/formsfield.componen
 import { GridlistComponent } from './components/gridlist/gridlist.component';
 import { PaginatorComponent } from './components/paginator/paginator.component';
 import { RadioripplesComponent } from './components/radioripples/radioripples.component';
+import { SortheaderComponent } from './components/sortheader/sortheader.component';
+import { TablematerialComponent } from './components/tablematerial/tablematerial.component';
+import { TreematerialComponent } from './components/treematerial/treematerial.component';
+import { NestedtreematerialComponent } from './components/nestedtreematerial/nestedtreematerial.component';
+import { FlattreematerialComponent } from './components/flattreematerial/flattreematerial.component';
 
 export const routes: Routes = [
   { path: 'about', component: AboutComponent },
@@ -33,4 +38,15 @@ export const routes: Routes = [
   { path: 'gridlist', component: GridlistComponent },
   { path: 'paginator', component: PaginatorComponent },
   { path: 'radioripples', component: RadioripplesComponent },
+  { path: 'sortheader', component: SortheaderComponent },
+  { path: 'tablematerial', component: TablematerialComponent },
+  {
+    path:'flattreematerial',component:FlattreematerialComponent
+  },
+   {
+    path:'nestedtreematerial',component:NestedtreematerialComponent
+  },
+   {
+    path:'treematerial',component:TreematerialComponent
+  }
 ];

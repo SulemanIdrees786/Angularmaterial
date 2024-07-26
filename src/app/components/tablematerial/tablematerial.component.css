@@ -1,0 +1,55 @@
+.demo-table {
+  width: 100%;
+}
+
+.mat-column-position {
+  width: 32px;
+  border-right: 1px solid currentColor;
+  padding-right: 24px;
+  text-align: center;
+}
+
+.mat-column-name {
+  padding-left: 16px;
+  font-size: 20px;
+}
+
+.mat-column-weight {
+  font-style: italic;
+}
+
+.mat-column-symbol {
+  width: 32px;
+  text-align: center;
+  font-weight: bold;
+}
+/* tablematerial.component.css */
+
+.custom-dialog-container {
+  border: 1px solid #ccc; /* Solid border */
+  border-radius: 8px; /* Rounded corners, adjust as needed */
+}
+
+.custom-dialog-container .mat-dialog-container {
+  max-width: 600px; /* Set maximum width */
+  min-width: 300px; /* Set minimum width */
+  max-height: 80vh; /* Set maximum height */
+}
+
+.custom-dialog-container ~ .cdk-overlay-backdrop {
+  backdrop-filter: blur(5px); /* Apply blur effect */
+}
+
+.cdk-overlay-backdrop {
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+}
+.add-button-container {
+  display: flex;
+  justify-content: flex-end; /* Align button to the right */
+  margin-bottom: 10px; /* Optional: Add margin to separate button from table */
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}

@@ -1,0 +1,71 @@
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+    <mat-tree-node *matTreeNodeDef="let node; when: hasNoContent" matTreeNodePadding>
+        <mat-form-field appearance="fill">
+            <input matInput [(ngModel)]="newItemName" name="newItemName" placeholder="Enter item name" required>
+        </mat-form-field>
+        <button mat-button (click)="saveNode(node, newItemName)" [disabled]="!newItemName">Save</button>
+    </mat-tree-node>
+
+    <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+        <span *ngIf="editingNode !== node || editingNodePosition !== node">{{ node.item }}</span>
+        <button mat-icon-button  (click)="addNewItem(node)"  [disabled]="isAdding" >
+            <mat-icon>add</mat-icon>
+        </button>
+        <button mat-icon-button (click)="deleteNode(node)" [disabled]="hasChildren(node)">
+            <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-icon-button (click)="startEditing(node)" *ngIf="editingNode !== node">
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="startEditingPosition(node)" *ngIf="editingNodePosition !== node">
+            <mat-icon>drag_indicator</mat-icon>
+        </button>
+        <mat-form-field appearance="fill" *ngIf="editingNode === node">
+            <input matInput [(ngModel)]="editNodeValue" name="editNodeValue" placeholder="Edit Node Name" required>
+        </mat-form-field>
+        <button mat-button *ngIf="editingNode === node" (click)="updateItemName(node)"
+            [disabled]="!editNodeValue">Save</button>
+        <mat-form-field appearance="fill" *ngIf="editingNodePosition === node">
+            <mat-select [(ngModel)]="editNodeLevel" name="editNodeLevel" placeholder="Edit position of node" required>
+                <mat-option *ngFor="let option of nodeOptions" [value]="option.item">
+                    {{ option.item }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-button *ngIf="editingNodePosition === node" (click)="updateItemPosition(node)"
+            [disabled]="!editNodeLevel">Save</button>
+    </mat-tree-node>
+
+    <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+        <button *ngIf="hasChildren(node)" mat-icon-button (click)="toggleNode(node)">
+            <mat-icon>{{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}</mat-icon>
+        </button>
+        <span *ngIf="editingNode !== node || editingNodePosition !== node">{{ node.item }}</span>
+        <button mat-icon-button   (click)="addNewItem(node)"  [disabled]="isAdding">
+            <mat-icon>add</mat-icon>
+        </button>
+        <button mat-icon-button (click)="deleteNode(node)" [disabled]="hasChildren(node)">
+            <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-icon-button (click)="startEditing(node)" *ngIf="editingNode !== node">
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="startEditingPosition(node)" *ngIf="editingNodePosition !== node">
+            <mat-icon>drag_indicator</mat-icon>
+        </button>
+        <mat-form-field appearance="fill" *ngIf="editingNode === node">
+            <input matInput [(ngModel)]="editNodeValue" name="editNodeValue" placeholder="Edit Node Name" required>
+        </mat-form-field>
+        <button mat-button *ngIf="editingNode === node" (click)="updateItemName(node)"
+            [disabled]="!editNodeValue">Save</button>
+        <mat-form-field appearance="fill" *ngIf="editingNodePosition === node">
+            <mat-select [(ngModel)]="editNodeLevel" name="editNodeLevel" placeholder="Edit position of node" required>
+                <mat-option *ngFor="let option of nodeOptions" [value]="option.item">
+                    {{ option.item }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-button *ngIf="editingNodePosition === node" (click)="updateItemPosition(node)"
+            [disabled]="!editNodeLevel">Save</button>
+    </mat-tree-node>
+</mat-tree>

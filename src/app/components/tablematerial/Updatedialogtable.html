@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Edit Data</h2>
+<div mat-dialog-content>
+    <mat-form-field>
+        <input matInput placeholder="Name" [(ngModel)]="updatedData.name" name="name" required>
+    </mat-form-field>
+    <br><br>
+    <mat-form-field>
+        <input matInput placeholder="Weight" type="number" [(ngModel)]="updatedData.weight" name="weight" required>
+    </mat-form-field>
+    <br><br>
+    <mat-form-field>
+        <input matInput placeholder="Symbol" [(ngModel)]="updatedData.symbol" name="symbol" required>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="cancel()">Cancel</button>
+    <button mat-button color="primary" (click)="saveChanges()">Save Changes</button>
+</div>
